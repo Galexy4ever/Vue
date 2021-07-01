@@ -44,13 +44,15 @@
     <label for="checkbox">Включить экранную клавиатуру</label><br />
     <div v-show="visible" class="numbers">
       <button
+        class=""
         v-for="number in myNumbers"
-        @click="getOper1()"
+        @click="getOper1(number)"
         :key="number"
         v-bind:title="number"
       >
         {{ number }}
       </button>
+
       <button @click="this.operand1.slice(0, -1)">Delete</button>
     </div>
     <div>
@@ -100,11 +102,13 @@ export default {
       const value = `${this.operand1}${operation}${this.operand2} = ${this.result}`;
       this.$set(this.logs, key, value);
     },
-    getOper1() {
-      this.operand1 = this.operand1 + this.number;
+    getOper1(num) {
+      console.log(this.number);
+      console.log(this.operand1);
+      this.operand1 = this.operand1 + num;
     },
-    getOper2() {
-      this.operand2 = this.operand2 + this.number;
+    getOper2(num) {
+      this.operand2 = this.operand2 + num;
     },
     add() {
       this.result = this.operand1 + this.operand2;
