@@ -53,11 +53,11 @@
         {{ number }}
       </button>
 
-      <button @click="this.operand1.slice(0, -1)">Delete</button>
+      <button @click="operand1.slice(' ')">Delete</button>
     </div>
     <div>
-      <input type="checkbox" :onchange.prop="getOper1" />Операнд 1
-      <input type="checkbox" :onchange.prop="getOper2" />Операнд 2
+      <input id="555" type="checkbox" :onchange.prop="getOper1" />Операнд 1
+      <input id="444" type="checkbox" :onchange.prop="getOper2" />Операнд 2
     </div>
   </div>
 </template>
@@ -103,7 +103,7 @@ export default {
       this.$set(this.logs, key, value);
     },
     getOper1(num) {
-      console.log(this.number);
+      console.log(this.num);
       console.log(this.operand1);
       this.operand1 = this.operand1 + num;
     },
