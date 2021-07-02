@@ -73,7 +73,7 @@ export default {
   name: "Calculator",
   data() {
     return {
-      myNumbers: [1, 2, 3, 4, 5, 6, 7, 8, 9, 0],
+      myNumbers: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"],
       operands: ["+", "-", "/", "*"],
       check: "",
       checked: "",
@@ -118,9 +118,9 @@ export default {
     },
     getOper(num) {
       if (this.check == 1) {
-        this.operand1 = this.operand1 + String(num);
+        this.operand1 = this.operand1 + num;
       } else {
-        this.operand2 = this.operand2 + String(num);
+        this.operand2 = this.operand2 + num;
       }
     },
     getOper1() {
